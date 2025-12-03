@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import { FaFacebook, FaTwitter, FaInstagram, FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
+import adlImage from "./assets/adlimage.jpeg";
+import bcflatsImage from "./assets/bcflatsimage.jpeg";
+import nielImage from "./assets/nielimage.jpg";
+import logoImage from "./assets/niel.png";
 
 const useTimeBasedTheme = () => {
     const [theme, setTheme] = useState('dark'); 
@@ -158,7 +162,7 @@ const Header = () => {
                 <div className="flex justify-between items-center">
                     <a href="#hero" className="text-xl font-bold tracking-wider hover:text-violet-400 transition-colors">
                         <img 
-                            src="/niel.png" 
+                            src={logoImage} 
                             alt="NI Logo" 
                             className="h-8 w-auto inline-block"
                         />
@@ -185,37 +189,17 @@ const Header = () => {
 };
 
 const AnimatedSection = ({ children, id, className = "" }) => {
-    const ref = useRef(null);
-    const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                    observer.unobserve(entry.target);
-                }
-            },
-            { threshold: 0.1 }
-        );
-        if (ref.current) {
-            observer.observe(ref.current);
-        }
-        return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
-            }
-        };
-    }, []);
-
     return (
-        <section
-            ref={ref}
+        <motion.section
             id={id}
-            className={`transition-opacity duration-600 ease-out transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'} ${className}`}
+            className={className}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
         >
             {children}
-        </section>
+        </motion.section>
     );
 };
 
@@ -225,14 +209,14 @@ export default function App() {
 
     const projects = [
         {
-            imgSrc: "src/assets/adlimage.jpeg",
+            imgSrc: adlImage,
             title: "Online Hotel Booking System",
             description: "A hotel reservation website with a modern design, booking management, and a seamless checkout process.",
             tags: ["Laravel", "PHP", "CSS", "HTML", "JS"],
             demoLink: "#"
         },
         {
-            imgSrc: "src/assets/bcflatsimage.jpeg",
+            imgSrc: bcflatsImage,
             title: "Online Hotel Booking App",
             description: "A full-automated hotel reservation website to help users organize rooms, set check-ins/outs, and track bookings with an intuitive interface.",
             tags: ["Angular", "Node.js", "MySQL", "Tailwind CSS",],
@@ -334,7 +318,7 @@ export default function App() {
         <div className="antialiased">
             <div className="absolute top-0 left-0 right-0 z-0 opacity-35" style={{ bottom: 'calc(100% - 650px)' }}> 
                 <img 
-                    src="src/assets/nielimage.jpg" 
+                    src={nielImage}
                     alt="Abstract background" 
                     className="w-full h-full object-cover transition-all duration-500"
                     style={{ filter: theme === 'dark' ? 'brightness(70%)' : 'grayscale(100%) brightness(180%)' }}
