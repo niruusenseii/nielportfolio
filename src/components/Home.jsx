@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from 'react-router-dom'; // ✅ 1. Import Link
+import { Link } from 'react-router-dom'; 
 import { FaFacebook, FaTwitter, FaInstagram, FaEnvelope, FaLinkedin, FaGithub, FaTimes } from "react-icons/fa";
 
-// Import Images
 import adlImage from "../assets/adlimage.jpeg";
 import bcflatsImage from "../assets/bcflatsimage.jpeg";
 import nielImage from "../assets/nielimage.jpg";
 
-// --- Helper Components ---
 
 const AnimatedSection = ({ children, id, className = "" }) => (
     <motion.section
@@ -23,7 +21,6 @@ const AnimatedSection = ({ children, id, className = "" }) => (
     </motion.section>
 );
 
-// ✅ 2. Updated ProjectCard to handle Internal Links (to Graphics page) vs External Links
 const ProjectCard = ({ imgSrc, title, description, tags, demoLink, isInternal }) => (
     <div className="glass-effect rounded-xl overflow-hidden group flex flex-col h-full transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
         <div className="relative overflow-hidden h-48 sm:h-56">
@@ -43,7 +40,6 @@ const ProjectCard = ({ imgSrc, title, description, tags, demoLink, isInternal })
                 ))}
             </div>
             
-            {/* Logic: If it's the graphics page, use Link. Otherwise use standard <a> tag */}
             {isInternal ? (
                 <Link to={demoLink} className="text-[var(--accent-link)] font-semibold text-sm hover:underline mt-auto inline-flex items-center gap-1">
                     View Gallery &rarr;
@@ -64,7 +60,6 @@ const SkillBadge = ({ icon, name }) => (
     </div>
 );
 
-// --- Main Home Component ---
 
 export default function Home() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -86,7 +81,6 @@ export default function Home() {
             demoLink: "https://hotelbookingui.onrender.com/",
             isInternal: false
         },
-        // ✅ 3. Added Graphics Directory Card
         {
             imgSrc: "https://placehold.co/600x400/8b5cf6/ffffff?text=Graphic+Arts", // Replace with your art later
             title: "Graphic Design Gallery",
@@ -115,7 +109,6 @@ export default function Home() {
 
     return (
         <div className="pt-20 relative z-10"> 
-            {/* Modal for Contact */}
             <AnimatePresence>
                 {isModalOpen && (
                     <div 
@@ -155,7 +148,6 @@ export default function Home() {
                 )}
             </AnimatePresence>
 
-            {/* HERO SECTION */}
             <AnimatedSection id="hero" className="min-h-[90vh] flex items-center justify-center container mx-auto px-6"> 
                 <div className="max-w-4xl text-center md:text-left"> 
                     <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight tracking-tight mb-6">
@@ -171,7 +163,6 @@ export default function Home() {
                             Let's Talk
                         </button>
                         
-                        {/* ✅ 4. HERO BUTTON (This is what you asked for) */}
                         <Link 
                             to="/graphics" 
                             className="border-[var(--border-color-light)] border text-[var(--text-secondary)] font-semibold px-8 py-3.5 rounded-lg hover:bg-[var(--accent-violet-primary)] hover:text-white hover:-translate-y-1 transition-all duration-300"
@@ -182,7 +173,6 @@ export default function Home() {
                 </div>
             </AnimatedSection>
 
-            {/* ABOUT SECTION */}
             <AnimatedSection id="about" className="py-16 md:py-24 container mx-auto px-6">
                 <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
                     <div className="w-full max-w-xs md:max-w-md md:w-1/3 relative group">
@@ -205,21 +195,18 @@ export default function Home() {
                 </div>
             </AnimatedSection>
 
-            {/* PROJECTS SECTION */}
             <AnimatedSection id="projects" className="py-16 md:py-24 container mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
                     <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">Some of the projects I've built to demonstrate my skills in frontend and backend development.</p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    {/* Maps through projects, including the Graphics Card */}
                     {projects.map((project, i) => (
                         <ProjectCard key={i} {...project} />
                     ))}
                 </div>
             </AnimatedSection>
 
-            {/* SKILLS SECTION */}
             <AnimatedSection id="skills" className="py-16 md:py-24 container mx-auto px-6 bg-[var(--tag-bg)]/20">
                 <div className="max-w-4xl mx-auto text-center">
                     <h2 className="text-3xl md:text-4xl font-bold mb-12">Technical Skills</h2>
@@ -231,7 +218,6 @@ export default function Home() {
                 </div>
             </AnimatedSection>
 
-            {/* CONTACT SECTION */}
             <AnimatedSection id="contact" className="py-20 md:py-32 container mx-auto px-6 text-center">
                 <div className="max-w-2xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold mb-6">Get In Touch</h2>
