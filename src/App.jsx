@@ -404,7 +404,7 @@ export default function App() {
                     <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">About Me</h2>
                     <div className="flex flex-col md:flex-row items-center gap-12">
                         <div className="md:w-1/3">
-                            <img src="src/assets/nielimage.jpg" alt="Niel" className="rounded-full shadow-lg w-64 h-64 md:w-full md:h-auto object-cover mx-auto" />
+                            <img src={nielImage} alt="Niel" className="rounded-full shadow-lg w-64 h-64 md:w-full md:h-auto object-cover mx-auto" />
                         </div>
                         <div className="md:w-2/3">
                             <p className="text-slate-400 mb-4">
