@@ -68,27 +68,19 @@ export default function Home() {
         {
             imgSrc: adlImage,
             title: "Online Hotel Booking System",
-            description: "A comprehensive reservation platform featuring real-time availability, secure payment processing, and an admin dashboard.",
+            description: "A comprehensive reservation platform featuring real-time availability, secure processing, and an admin dashboard.",
             tags: ["Laravel", "PHP", "MySQL", "Bootstrap"],
             demoLink: "#",
             isInternal: false
         },
         {
             imgSrc: bcflatsImage,
-            title: "Hotel Management App",
-            description: "An automated solution for room organization, check-in/out tracking, and revenue reporting.",
-            tags: ["Angular", "Node.js", "Sequelize", "Tailwind"],
+            title: "Hotel Management System",
+            description: "An automated solution for room organization, check-in/out tracking, request handling, and revenue reporting.",
+            tags: ["Angular", "TypeScript", "Node.js", "MySQL", "Sequelize", "Tailwind"],
             demoLink: "https://hotelbookingui.onrender.com/",
             isInternal: false
         },
-        {
-            imgSrc: "https://placehold.co/600x400/8b5cf6/ffffff?text=Graphic+Arts", // Replace with your art later
-            title: "Graphic Design Gallery",
-            description: "A collection of my creative works including logos, posters, social media kits, and UI mockups.",
-            tags: ["Photoshop", "Illustrator", "Figma", "Canva"],
-            demoLink: "/graphics", // Points to your route
-            isInternal: true       // Tells card to use <Link>
-        }
     ];
 
     const skills = [
@@ -153,22 +145,15 @@ export default function Home() {
                     <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight tracking-tight mb-6">
                         Hi, I'm <span className="gradient-text">Niel Ivan</span>.
                         <br className="hidden md:block" />
-                        I build things for the web.
+                        Let's build things for the web!
                     </h1>
                     <p className="text-base sm:text-lg md:text-xl text-[var(--text-secondary)] max-w-2xl mx-auto md:mx-0 mb-8 leading-relaxed">
-                        A passionate developer based in Consolacion, Cebu. I specialize in creating beautiful, intuitive, and high-performance web applications.
+                        A passionate developer based in Consolacion, Cebu, and a 4th year BSIT Student in Benedicto College. I specialize in creating beautiful, intuitive, and cool web applications.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                         <button onClick={() => setIsModalOpen(true)} className="bg-[var(--accent-violet-primary)] text-white font-semibold px-8 py-3.5 rounded-lg hover:bg-[var(--accent-violet-hover)] hover:-translate-y-1 transition-all duration-300">
                             Let's Talk
                         </button>
-                        
-                        <Link 
-                            to="/graphics" 
-                            className="border-[var(--border-color-light)] border text-[var(--text-secondary)] font-semibold px-8 py-3.5 rounded-lg hover:bg-[var(--accent-violet-primary)] hover:text-white hover:-translate-y-1 transition-all duration-300"
-                        >
-                            View Graphic Arts 🎨
-                        </Link>
                     </div>
                 </div>
             </AnimatedSection>
@@ -185,7 +170,7 @@ export default function Home() {
                         </h2>
                         <div className="space-y-4 text-[var(--text-secondary)] text-base md:text-lg leading-relaxed">
                             <p>
-                                Hello! I'm Niel Ivan, a developer with a passion for creating engaging user experiences. My journey into web development started years ago, and since then, I've been honing my skills in modern web technologies.
+                                Hello! I'm Niel Ivan M. Eroy, a developer with a passion for creating engaging user experiences. My journey into web development started years ago, and since then, I've been honing my skills in modern web technologies.
                             </p>
                             <p>
                                 When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, creating graphic designs, or just relaxing in Consolacion or Borbon.

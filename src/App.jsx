@@ -137,7 +137,7 @@ export default function App() {
 
                 <footer className="py-8 border-t border-[var(--border-color-dark)] glass-effect relative z-10">
                     <div className="container mx-auto px-6 text-center text-[var(--text-secondary)] text-sm">
-                        <p>&copy; 2025 Niel Ivan Eroy. Designed & Built with &hearts;.</p>
+                        <p>&copy; 2025 Niel Ivan Eroy. All Rights Reserved.</p>
                     </div>
                 </footer>
             </div>

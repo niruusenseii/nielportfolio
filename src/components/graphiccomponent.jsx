@@ -4,17 +4,22 @@ import { Link } from 'react-router-dom';
 import { FaTimes, FaArrowLeft, FaSearchPlus } from "react-icons/fa";
 
 const designWorks = [
-    { id: 1, category: "Logo", title: "Tech Start-Up", img: "https://placehold.co/600x600/1e293b/8b5cf6?text=Logo+Design" },
-    { id: 2, category: "Social Media", title: "Summer Campaign", img: "https://placehold.co/600x800/1e293b/38b2ac?text=Social+Post" },
-    { id: 3, category: "Poster", title: "Music Festival", img: "https://placehold.co/600x900/1e293b/f472b6?text=Event+Poster" },
-    { id: 4, category: "UI/UX", title: "Mobile App Mockup", img: "https://placehold.co/600x700/1e293b/facc15?text=App+UI" },
-    
-    { id: 7, category: "T-Shirt", title: "Retro Streetwear", img: "https://placehold.co/600x800/1e293b/ef4444?text=Retro+Tee+Mockup" },
-    { id: 8, category: "T-Shirt", title: "Corporate Merch", img: "https://placehold.co/600x800/1e293b/3b82f6?text=Company+Polo" },
-    { id: 9, category: "T-Shirt", title: "Minimalist Typography", img: "https://placehold.co/600x800/1e293b/10b981?text=Typo+Tee" },
-    
-    { id: 5, category: "Logo", title: "Coffee Brand", img: "https://placehold.co/600x600/1e293b/fb923c?text=Coffee+Logo" },
-    { id: 6, category: "Social Media", title: "Product Launch", img: "https://placehold.co/600x600/1e293b/4ade80?text=Product+Ad" },
+    { id: 1, category: "Logo", title: "PRSNC mockup", img: "/designs/prsnc2-14.png" },
+    { id: 2, category: "Social Media", title: "Cybersecurity Awareness", img: "/designs/infographics.png" },
+    { id: 3, category: "Poster", title: "Hotel System Poster", img: "/designs/capstoneposter.png" },
+    { id: 4, category: "UI/UX", title: "Mobile App Mockup", img: "/designs/app-ui.jpg" },
+    { id: 7, category: "T-Shirt", title: "CCS Intramurals Tshirt 2024", img: "/designs/CSSTSHIRT2.jpg" },
+    { id: 13, category: "T-Shirt", title: "CCS Intramurals Tshirt 2025 - Mockup", img: "/designs/tshirtccs4.png" },
+    { id: 8, category: "T-Shirt", title: "CCS Department Polo Shirt", img: "/designs/psitepolodesign.png" },
+    { id: 9, category: "T-Shirt", title: "CCS Intramurals Jersey", img: "/designs/CCSrevamped.png" },
+    { id: 5, category: "Logo", title: "CCS Purple Dragons Logo", img: "/designs/CCSLOGO.png" },
+    { id: 6, category: "Poster", title: "Smart Irrigation Poster", img: "/designs/SMARTIRRIGATIONSYSTEM.png" },
+    { id: 10, category: "Poster", title: "Western Ethical Teachings", img: "/designs/ethics1.png" },
+    { id: 11, category: "Poster", title: "Standard - Diecast Collection", img: "/designs/diecastposter.jpg" },
+    { id: 12, category: "Social Media", title: "Graphica Works - Student Discount", img: "/designs/graphicaworksstudentdiscount.jpg" },
+    { id: 14, category: "Poster", title: "Clean - Ethics Performance Task", img: "/designs/cover.png" },
+    { id: 15, category: "Poster", title: "Windfields Subdivision Sports League 2024", img: "/designs/wfs33.jpg" },
+    { id: 16, category: "T-Shirt", title: "Fearless Bulldogs Jersey Mockup", img: "/designs/bulldogsbball.jpg" },
 ];
 
 const GraphicDesignSection = () => {
@@ -54,7 +59,6 @@ const GraphicDesignSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
             >
-                {/* Back Navigation */}
                 <div className="mb-8">
                     <Link 
                         to="/" 
@@ -65,12 +69,11 @@ const GraphicDesignSection = () => {
                 </div>
 
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Graphic Design & Merch</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Graphic Design Gallery</h2>
                     <p className="text-[var(--text-secondary)] max-w-2xl mx-auto mb-8">
-                        Beyond code, I explore creativity through visual design, apparel, and branding.
+                        Beyond code, I explore creativity through visual design. Click any image to view details.
                     </p>
 
-                    {/* Filter Buttons (Will now include "T-Shirt") */}
                     <div className="flex flex-wrap justify-center gap-3 mb-10">
                         {categories.map((cat) => (
                             <button
@@ -79,7 +82,7 @@ const GraphicDesignSection = () => {
                                 className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
                                     filter === cat 
                                     ? 'bg-[var(--accent-violet-primary)] text-white shadow-lg scale-105' 
-                                    : 'glass-effect text-[var(--text-secondary)] hover:text-[var(--text-color)] hover:bg-[var(--tag-bg)]'
+                                    : 'bg-[var(--tag-bg)] text-[var(--text-secondary)] hover:text-[var(--text-color)]'
                                 }`}
                             >
                                 {cat}
@@ -88,7 +91,6 @@ const GraphicDesignSection = () => {
                     </div>
                 </div>
 
-                {/* Grid Gallery */}
                 <motion.div 
                     layout 
                     className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6"
@@ -97,22 +99,21 @@ const GraphicDesignSection = () => {
                         {filteredWorks.map((work) => (
                             <motion.div
                                 layout
-                                initial={{ opacity: 0, scale: 0.8 }}
+                                initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.8 }}
+                                exit={{ opacity: 0, scale: 0.9 }}
                                 transition={{ duration: 0.3 }}
                                 key={work.id}
-                                className="relative group rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all bg-[var(--glass-bg)]"
+                                className="relative group rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all bg-[var(--tag-bg)] h-64 md:h-72 lg:h-80"
                                 onClick={() => setSelectedImage(work)}
                             >
                                 <img 
                                     src={work.img} 
                                     alt={work.title} 
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 aspect-[3/4] md:aspect-auto"
                                     loading="lazy"
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                 />
                                 
-                                {/* Hover Overlay */}
                                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-center p-4">
                                     <FaSearchPlus className="text-white text-3xl mb-3 opacity-80" />
                                     <span className="text-[var(--accent-violet-primary)] text-xs font-bold uppercase tracking-wider mb-2">{work.category}</span>
@@ -124,7 +125,6 @@ const GraphicDesignSection = () => {
                 </motion.div>
             </motion.section>
 
-            {/* Lightbox Modal */}
             <AnimatePresence>
                 {selectedImage && (
                     <div 
@@ -151,7 +151,6 @@ const GraphicDesignSection = () => {
                                 alt={selectedImage.title} 
                                 className="w-auto max-h-[80vh] object-contain rounded-lg shadow-2xl mb-6"
                             />
-                            
                             <div className="text-center text-white">
                                 <h3 className="text-2xl font-bold mb-1">{selectedImage.title}</h3>
                                 <p className="text-gray-400 text-lg flex items-center justify-center gap-2">
